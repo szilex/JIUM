@@ -1,0 +1,67 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+
+<BorderPane fx:id="borderPane" fx:controller="controller_view.javaFX.Controller"
+            xmlns:fx="http://javafx.com/fxml" >
+    <top>
+        <MenuBar>
+            <Menu text="File">
+                <MenuItem text="Load text" onAction="#showOpenTextFileDialog"/>
+                <SeparatorMenuItem/>
+                <MenuItem text="Save processed text" onAction="#showSaveProcessedTextDialog"/>
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <center>
+        <GridPane alignment="top_left" hgap="10" vgap="10">
+            <padding>
+                <Insets top="10" left="10" bottom="10" right="10"/>
+            </padding>
+            <VBox alignment="top_left">
+                <Label text="Insert text (max length: 190 characters):"/>
+                <TextArea fx:id="unprocessedTextArea" minWidth="600" wrapText="true"/>
+                <Label text="Private Key:"/>
+                <TextField fx:id="privateKeyTextField" minWidth="600"/>
+                <Label text="Public Key:"/>
+                <TextField fx:id="publicKeyTextField" minWidth="600"/>
+
+                <BorderPane>
+                    <left>
+                        <HBox spacing="10">
+                            <fx:define>
+                                <ToggleGroup fx:id="optionToggleGroup"/>
+                            </fx:define>
+                            <RadioButton text="Encrypt text" toggleGroup="$optionToggleGroup" selected="true"/>
+                            <RadioButton text="Decrypt text" toggleGroup="$optionToggleGroup"/>
+                        </HBox>
+                    </left>
+                    <right>
+                        <HBox>
+                            <Button fx:id="generateKeysButton" text="Generate keys"
+                                    onAction="#generateKeysButtonClicked"/>
+                            <Button text="Process" onAction="#processButtonClicked"/>
+                        </HBox>
+                    </right>
+                </BorderPane>
+
+                <Label text="Processed text:"/>
+                <TextArea fx:id="processedTextArea" minWidth="600" wrapText="true"/>
+            </VBox>
+        </GridPane>
+    </center>
+
+</BorderPane>
