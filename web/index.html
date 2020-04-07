@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RSA Encryption and Decryption</title>
+</head>
+<body>
+<div>
+  <h1> Welcome to RSA Encryption and Decryption Home Page!</h1>
+  <h2> Please insert encryption/decryption parameters:</h2>
+</div>
+<div>
+  <form action="ProcessData" method="get">
+    Text to process:<br/>
+    <textarea name="inputText" rows="15" cols="150"></textarea><br/>
+    Private Key:<br/>
+    <input type="text" name="privateKeyText" size="150"/><br/>
+    Public Key:<br/>
+    <input type="text" name="publicKeyText" size="150"/><br/>
+    <input type="radio" name="operation" value="encrypt" checked="checked"/> Encrypt<br/>
+    <input type="radio" name="operation" value="decrypt"/> Decrypt<br/>
+    <input type="submit" value="ProcessData"/>
+  </form>
+</div>
+
+<div>
+  <form action="ShowHistory">
+    <input type="submit" value="Show history"/>
+  </form>
+</div>
+</body>
+</html>
