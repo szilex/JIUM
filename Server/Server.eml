@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inherit-compiler-output="true" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/out/test/Server"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<levels>
+		<level name="jdk-13" value="project"/>
+		<level name="annotations-17.0.0" value="project"/>
+		<level name="apiguardian-api-1.0.0" value="project"/>
+	</levels>
+</component>
